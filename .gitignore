@@ -1,5 +1,5 @@
-.vs/
-Exmo.Core/bin/
-Exmo.Core/obj/
-Exmo/bin/
-Exmo/obj/
+src/.vs/
+src/Exmo.Core/bin/
+src/Exmo.Core/obj/
+src/Exmo/bin/
+src/Exmo/obj/
