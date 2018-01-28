@@ -1,0 +1,66 @@
+﻿<base:BaseUserControl
+    x:Class="Exmo.Controls.ChartControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Exmo.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:charts="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Exmo.Common"
+    xmlns:base="using:Exmo.Controls.Base"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <StackPanel x:Name="Root">
+        <charts:SfChart x:Name="MainChart" FontSize="12" Height="{x:Bind PriceChartHeight, Mode=OneWay}">
+
+            <charts:SfChart.TechnicalIndicators>
+
+                <charts:SimpleAverageIndicator  Period="20"
+                                                SignalLineColor="#64BB64" XBindingPath="Time" StrokeThickness="1"
+                                                Volume="VolumeFrom" High="High" Open="Open"  Close="Close" Low="Low" >
+                </charts:SimpleAverageIndicator >
+
+                <charts:SimpleAverageIndicator  Period="5"
+                                                SignalLineColor="#F89018" XBindingPath="Time" StrokeThickness="1"
+                                                Volume="VolumeFrom" High="High" Open="Open"  Close="Close" Low="Low" >
+
+                </charts:SimpleAverageIndicator >
+
+            </charts:SfChart.TechnicalIndicators>
+
+            <charts:SfChart.PrimaryAxis>
+                <charts:DateTimeAxis Name="SalesDateTimeAxis" Visibility="Collapsed"/>
+            </charts:SfChart.PrimaryAxis>
+
+            <charts:SfChart.SecondaryAxis>
+                <charts:NumericalAxis></charts:NumericalAxis>
+            </charts:SfChart.SecondaryAxis>
+            
+            <charts:CandleSeries x:Name="SalesSeries" XBindingPath="Time" ShowTooltip="True" StrokeThickness="1"
+                                 High="High" Open="Open"  Close="Close" Low="Low" BearFillColor="#FD2746"
+                                 BullFillColor="#537EF7">
+
+            </charts:CandleSeries>
+
+        </charts:SfChart>
+
+        <charts:SfChart x:Name="SecondChart" Margin="0 12 0 0" FontSize="10" Height="{x:Bind VolumeChartHeight, Mode=OneWay}">
+
+            <charts:SfChart.PrimaryAxis>
+                <charts:DateTimeAxis Name="VolumeTimeAxis" Visibility="Collapsed"/>
+            </charts:SfChart.PrimaryAxis>
+            
+            <charts:SfChart.SecondaryAxis>
+                <charts:NumericalAxis></charts:NumericalAxis>
+            </charts:SfChart.SecondaryAxis>
+
+            <charts:ColumnSeries x:Name="VolumeSeries" Interior="#7F7F7F" ShowTooltip="True" 
+                                 XBindingPath="Time" YBindingPath="VolumeTo" >
+            </charts:ColumnSeries>
+
+        </charts:SfChart>
+    </StackPanel>
+</base:BaseUserControl>
+

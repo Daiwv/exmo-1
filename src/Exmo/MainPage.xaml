@@ -1,0 +1,23 @@
+﻿<local:BasePage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Exmo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:Exmo.ViewModels"
+    xmlns:controls="using:Exmo.Controls"
+    xmlns:common="using:Exmo.Common"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Charts"
+    x:Class="Exmo.MainPage"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <StackPanel>
+                <controls:TickerList/>
+                <controls:RangeChartControl/>
+                <controls:UserTradesControl CurrencyPair="{x:Bind ViewModel.SelectedCurrencyPair, Mode=OneWay}" MaxHeight="400" Margin="16"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</local:BasePage>

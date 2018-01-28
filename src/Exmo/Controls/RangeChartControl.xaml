@@ -1,0 +1,49 @@
+﻿<base:BaseUserControl
+    x:Class="Exmo.Controls.RangeChartControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Exmo.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:charts="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:common="using:Exmo.Common"
+    xmlns:base="using:Exmo.Controls.Base"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid Padding="16">
+        <StackPanel>
+            <Grid Margin="0 0 0 12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0">
+                    <Button Content="{x:Bind common:Converters.RefreshTimeFormatter(ChartControl.LastRefreshTime), Mode=OneWay, FallbackValue='Refresh'}" Style="{StaticResource ChartPeriodsButtonStyle}" Click="Refresh_OnClick"></Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                    <ToggleButton Content="1 Hour" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 1), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="1"></ToggleButton>
+                    <ToggleButton Content="1 Day" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 2), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="2"></ToggleButton>
+                    <ToggleButton Content="2 Weeks" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 3), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="3"></ToggleButton>
+                    <ToggleButton Content="1 Month" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 4), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="4"></ToggleButton>
+                    <ToggleButton Content="3 Months" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 5), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="5"></ToggleButton>
+                    <ToggleButton Content="6 Months" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 6), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="6"></ToggleButton>
+                    <ToggleButton Content="12 Months" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 7), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="7"></ToggleButton>
+                    <ToggleButton Content="3 Years" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, 8), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="8"></ToggleButton>
+                    <!--<ToggleButton Content="All data" Style="{StaticResource ChartPeriodsToggleButtonStyle}" IsChecked="{x:Bind common:Converters.IsTimeFrameChecked(ViewModel.ChartTimeFrame, -1), Mode=OneWay}" Click="ButtonBase_OnClick" Tag="-1"></ToggleButton>-->
+                </StackPanel>
+            </Grid>
+            <local:ChartControl x:Name="ChartControl" ChartTimeFrame="{x:Bind ViewModel.ChartTimeFrame, Mode=OneWay}" CurrencyPair="{x:Bind ViewModel.SelectedCurrencyPair, Mode=OneWay}"></local:ChartControl>
+        </StackPanel>
+    </Grid>
+</base:BaseUserControl>
+
+
+
+
+
+
+
