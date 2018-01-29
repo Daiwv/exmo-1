@@ -119,7 +119,9 @@
     <Compile Include="Api\Exmo\Models\TickerItem.cs" />
     <Compile Include="Api\Exmo\Models\PairSetting.cs" />
     <Compile Include="Api\Exmo\ExmoApi.cs" />
+    <Compile Include="Models\Base\ObservableObject.cs" />
     <Compile Include="Models\Enums\ChartTimeFrame.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\RunOn.cs" />
     <EmbeddedResource Include="Properties\Exmo.Core.rd.xml" />

@@ -5,7 +5,7 @@
 
     using Windows.Storage;
 
-    using Exmo.ViewModels.Base;
+    using Exmo.Core.Models.Base;
 
     public class TickerViewModel : ObservableObject
     {

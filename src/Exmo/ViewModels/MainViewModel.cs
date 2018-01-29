@@ -11,13 +11,13 @@
     using Exmo.Core.Api.Exmo.Models;
     using Exmo.Core.Models.Enums;
     using Exmo.Core.Utilities;
-    using Exmo.ViewModels.Base;
 
     using Windows.Foundation;
     using Windows.Storage;
     using Windows.UI.Core;
 
     using Exmo.Core.Api.Exmo;
+    using Exmo.Core.Models.Base;
 
     public class MainViewModel : ObservableObject
     {

@@ -1,0 +1,24 @@
+﻿<local:BasePage
+    x:Class="Exmo.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Exmo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ExmoBackground}">
+        <Border Padding="12" BorderBrush="{ThemeResource SystemControlBackgroundListMediumBrush}" BorderThickness="1" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="380">
+            <StackPanel >
+                <TextBlock Text="API key" Style="{ThemeResource CaptionTextBlockStyle}"></TextBlock>
+                <TextBox Margin="0 6 0 0" Text="{x:Bind ViewModel.ExmoApiKey, Mode=TwoWay}"></TextBox>
+
+                <TextBlock Margin="0 24 0 0" Text="API secret" Style="{ThemeResource CaptionTextBlockStyle}"></TextBlock>
+                <TextBox Margin="0 6 0 0" Text="{x:Bind ViewModel.ExmoApiSecret, Mode=TwoWay}"></TextBox>
+
+                <Button Content="Login" Margin="0 24 0 0" HorizontalAlignment="Right" Click="OnLoginClick"></Button>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</local:BasePage>

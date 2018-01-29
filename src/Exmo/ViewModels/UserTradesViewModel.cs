@@ -4,7 +4,7 @@
     using System.Collections.ObjectModel;
 
     using Exmo.Core.Api.Exmo.Models;
-    using Exmo.ViewModels.Base;
+    using Exmo.Core.Models.Base;
 
     public class UserTradesViewModel : ObservableObject
     {

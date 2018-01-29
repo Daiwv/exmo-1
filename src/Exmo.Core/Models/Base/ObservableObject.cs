@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Exmo.ViewModels.Base
+namespace Exmo.Core.Models.Base
 {
     #region
 

@@ -17,6 +17,7 @@ namespace Exmo.Core.Api.Exmo
 
 
     using global::Exmo.Core.Api.Exmo.Base;
+    using global::Exmo.Core.Models;
 
     using Models;
 
@@ -25,7 +26,7 @@ namespace Exmo.Core.Api.Exmo
     public class ExmoApi : ExmoApiBase
     {
         public ExmoApi()
-            : this("K-7cc97c89aed2a2fd9ed7792d48d63f65800c447b", "S-dbefd4ddec7e4930e645645645618c278ba35374f")
+            : this(Settings.Instance.ExmoApiKey, Settings.Instance.ExmoApiSecret)
         {
             
         }

@@ -114,6 +114,9 @@
     <Compile Include="Controls\TickerList.xaml.cs">
       <DependentUpon>TickerList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -128,7 +131,6 @@
     <Compile Include="TickerOverlayPage.xaml.cs">
       <DependentUpon>TickerOverlayPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Base\ObservableObject.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\TickerViewModel.cs" />
     <Compile Include="ViewModels\UserTradesViewModel.cs" />
@@ -214,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\TickerList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
